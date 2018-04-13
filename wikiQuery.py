@@ -37,7 +37,7 @@ try:
 
 except KeyboardInterrupt, e:
 	print e
-	print "GOOD BYE DUDE :)"
+	print "GOOD BYE DUDE :) "
 except:
 	print "something went wrong :("
 	print "please re execute the program"
