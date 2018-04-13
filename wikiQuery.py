@@ -11,8 +11,6 @@ print "GID : "+str(os.getgid())
 print "PID : "+str(os.getpid())
 print "\n"
 
-
-usage = "USAGE:\npython "+__file__+" [SEARCH QUERY]"
 try:
 	while 1:
 		searchQuery = str(raw_input("enter a search query : "))
@@ -28,17 +26,18 @@ try:
 			urlIdOpen = requests.get(wikiId+str(urlId))
 			urlIdOpen = urlIdOpen.url
 			title = jsonLoad["query"]["pages"][a]["title"]
-			print title
+			print "\t\t" + title
 
 			urltitle = "_".join(title.split(" "))
 			urlIdOpen = "https://en.wikipedia.org/wiki/"+urltitle
-			print urlIdOpen
+			print "\t\t"+urlIdOpen
 
-			print jsonLoad["query"]["pages"][a]["extract"]
+			print "\t\t"+jsonLoad["query"]["pages"][a]["extract"]
 			print "\n"
 
 except KeyboardInterrupt, e:
 	print e
 	print "GOOD BYE DUDE :)"
 except:
-	print usage
+	print "something went wrong :("
+	print "please re execute the program"
